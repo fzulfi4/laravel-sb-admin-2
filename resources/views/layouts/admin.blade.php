@@ -30,11 +30,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">CMS <sup>Clinic</sup></div>
         </a>
 
         <!-- Divider -->
@@ -52,6 +52,32 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
+            {{ __('clinic management') }}
+        </div>
+
+         <!-- Nav Item - doctor -->
+         <li class="nav-item {{ Nav::isRoute('doctors') }}">
+            <a class="nav-link" href="{{ route('doctors') }}">
+                <i class="fas fa-fw fa-hands-helping"></i>
+                <span>{{ __('doctors') }}</span>
+            </a>
+        </li>
+
+         <!-- Heading -->
+         <div class="sidebar-heading">
+            {{ __('users management') }}
+        </div>
+
+         <!-- Nav Item - Users -->
+         <li class="nav-item {{ Nav::isRoute('users') }}">
+            <a class="nav-link" href="{{ route('users') }}">
+                <i class="fas fa-fw fa-hands-helping"></i>
+                <span>{{ __('users') }}</span>
+            </a>
+        </li>
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
             {{ __('Settings') }}
         </div>
 
@@ -60,14 +86,6 @@
             <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
                 <span>{{ __('Profile') }}</span>
-            </a>
-        </li>
-
-        <!-- Nav Item - About -->
-        <li class="nav-item {{ Nav::isRoute('about') }}">
-            <a class="nav-link" href="{{ route('about') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
-                <span>{{ __('About') }}</span>
             </a>
         </li>
 
